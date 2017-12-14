@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Events!</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+  </head>
+  <body>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-offset-2 col-md-8">
+          <div class="jumbotron">
+            <h2>User choice <span id="user-text"><strong>__</strong></span></h2>
+            <h2>Computer choice <span id="comp-text"><strong>__</strong></span></h2>
+            <h2>wins <span id="win-count"><strong>0</strong></span></h2>
+            <h2>losses <span id="loss-count"><strong>0</strong></span></h2>
+            <h2>draws <span id="draw-count"><strong>0</strong></span></h2>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      var choices = ["r", "p", "s"]
+      var userText = document.getElementById("user-text");
+      var compText = document.getElementById ("comp-text");
+      var winText = document.getElementById("win-count");
+      var lossText = document.getElementById("loss-count");
+      var drawsText = document.getElementById("draw-count");
+      document.onkeyup = function(event) {
+        if (event.key ==="a" || event.key === "b" || event.key === "c")|| event.key === "d" ||event.key === "e" ||event.key === "f" ||event.key === "g" ||event.key === "g" ||event.key === "i" ||event.key === "j" ||event.key === "k" ||event.key === "l" ||event.key === "n" ||event.key === "o" ||event.key === "p" ||event.key === "q" ||event.key === "r" ||event.key === "s" ||event.key === "t" ||event.key === "u" ||event.key === "v" ||event.key === "w" ||event.key === "x" ||event.key === "y" ||event.key === "z"||{
+          userText.textContent = event.key;
+          compText.textContent = choices[Math.floor(Math.random() * 16)];
+
+          if (userText.textContent !== compText.textContent){
+            console.log("hahahahooooooo");
+            console.log("ahahaha");
+            if (userText.textContent === "r"){
+              if(compText.textContent === "p"){
+                lossText.textContent++;
+              }
+              else if(compText.textContent ==="s"){
+                winText.textContent++;
+              }
+            }
+
+            else if (userText.textContent === "p"){
+              if(compText.textContent === "s"){
+                lossText.textContent++;
+              }
+              else if(compText.textContent === "r"){
+                winText.textContent++;
+              }
+            }
+
+            else if (userText.textContent === "s"){
+              if(compText.textContent === "r"){
+                lossText.textContent++;
+              }
+              else if(compText.textContent === "p"){
+                winText.textContent++;
+              }
+            }
+          }
+
+          else if (userText.textContent === compText.textContent){
+            console.log("hahahaha");
+            drawsText.textContent ++;
+              }
+            } 
+          }
+
+
+
+
+    </script>
+  </body>
+</html>
